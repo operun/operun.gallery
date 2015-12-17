@@ -1,0 +1,23 @@
+<registry>
+
+  <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/gallery">
+    <value key="js">++resource++operun.gallery/gallery.js</value>
+    <value key="deps">jquery</value>
+    <value key="css">
+      <element>++resource++operun.gallery/gallery.less</element>
+    </value>
+  </records>
+
+  <records interface='Products.CMFPlone.interfaces.IBundleRegistry' prefix="plone.bundles/gallery">
+    <value key="resources">
+      <element>gallery</element>
+    </value>
+    <value key="jscompilation">++resource++operun.gallery/gallery-compiled.js</value>
+    <value key="csscompilation">++resource++operun.gallery/gallery-compiled.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="depends">plone</value>
+    <value key="last_compilation"></value>
+  </records>
+
+</registry>

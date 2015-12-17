@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-17 16:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: operun/gallery/profiles/default/types/Gallery.xml
+msgid "Gallery"
+msgstr ""
+
+#. Default: "Upload a gallery image."
+#: operun/gallery/content/gallery.py:21
+msgid "gallery_image_description"
+msgstr ""
+
+#. Default: "Image"
+#: operun/gallery/content/gallery.py:20
+msgid "gallery_image_title"
+msgstr ""
+
+#. Default: "Add an image description."
+#: operun/gallery/content/gallery.py:15
+msgid "gallery_text_description"
+msgstr ""
+
+#. Default: "Text"
+#: operun/gallery/content/gallery.py:14
+msgid "gallery_text_title"
+msgstr ""
+
