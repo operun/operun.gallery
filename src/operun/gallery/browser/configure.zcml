@@ -25,4 +25,12 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="gallery"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".gallery.GalleryView"
+      layer="operun.gallery.interfaces.IOperunGalleryLayer"
+      permission="zope2.View"
+      />
+
 </configure>
