@@ -46,7 +46,7 @@ class GalleryView(BrowserView):
 
             if obj.image:
                 images_view = api.content.get_view('images', obj, self.request)  # noqa
-                tag = images_view.tag('image', height=400, width=400, direction='down')  # noqa
+                tag = images_view.tag('image', height=450, width=450, direction='down')  # noqa
             else:
                 tag = None
 
@@ -55,9 +55,6 @@ class GalleryView(BrowserView):
                     'image': tag,
                     'url': url,
                     }
-
             items.append(data)
-
-
 
         return items
