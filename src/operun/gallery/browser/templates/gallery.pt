@@ -1,47 +1,38 @@
 <html i18n:domain="plone"
-			lang="en"
-			metal:use-macro="context/main_template/macros/master"
-			xml:lang="en"
-			xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-			xmlns:metal="http://xml.zope.org/namespaces/metal"
-			xmlns:tal="http://xml.zope.org/namespaces/tal"
-			xmlns="http://www.w3.org/1999/xhtml">
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      xml:lang="en"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns="http://www.w3.org/1999/xhtml">
 
-	<body>
+  <body>
+    <metal:content-core fill-slot="content-core">
+      <metal:content-core define-macro="content-core" tal:define="toc context/table_of_contents|nothing;">
 
-		<metal:content-core fill-slot="content-core">
-			<metal:content-core define-macro="content-core" tal:define="toc context/table_of_contents|nothing;">
+      <div id="parent-fieldname-text"
+           tal:condition="exists:context/text"
+           tal:content="structure python:context.text.output_relative_to(view.context)"
+           tal:attributes="class python: toc and 'pat-autotoc' or ''"/>
 
-				<div id="parent-fieldname-text"
-						 tal:condition="exists:context/text"
-						 tal:content="structure python:context.text.output_relative_to(view.context)"
-						 tal:attributes="class python: toc and 'pat-autotoc' or ''"/>
+      <div class="row" id="gallery" tal:define="images view/images" tal:condition="images">
+          <div class="col-xs-4 col-sm-3" tal:repeat="image images">
+              <div class="gallery-image">
+                  <div class="image-title">
+                	<h2 tal:content="image/title">Teaser Title</h2>
+                  </div>
+                  <a href="" data-lightbox="" data-title="" tal:attributes="href image/url;
+                                                                            data-lightbox context/id;
+                                                                            data-title image/title">
+                    <img tal:replace="structure image/image"/>
+                  </a>
+              </div>
+          </div>
+      </div>
 
-				<section id="gallery" tal:define="images view/images" tal:condition="images">
-					<div class="col-xs-4 col-sm-3" tal:repeat="image images">
-						<div class="gallery-image">
-							<!-- <div class="image-title">
-								<h2 tal:content="image/title">Teaser Title</h2>
-							</div> -->
-							<a href="" tal:attributes="href image/url;data-title image/title" data-lightbox="image" data-title=""></a>
-						</div>
-					</div>
-				</section>
-
-			</metal:content-core>
-		</metal:content-core>
-
-	<script type="text/javascript">
-
-		require([
-			'jquery',
-			'lightbox',
-		], function ($) {
-			'use strict';
-
-		})
-	</script>
-
-	</body>
+      </metal:content-core>
+    </metal:content-core>
+  </body>
 
 </html>

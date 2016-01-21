@@ -3,9 +3,6 @@
   <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/lightbox">
     <value key="js">++resource++operun.gallery/lightbox.js</value>
     <value key="deps">jquery</value>
-    <value key="css">
-      <element>++resource++operun.gallery/lightbox.less</element>
-    </value>
   </records>
 
   <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/gallery">
