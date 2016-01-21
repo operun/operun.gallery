@@ -3,7 +3,7 @@
 from plone.app.textfield import RichText
 from plone.dexterity.content import Container
 from operun.gallery import _
-from zope import schema
+from zope import schema  # noqa
 from zope.interface import Interface
 from plone.namedfile.field import NamedBlobImage
 
