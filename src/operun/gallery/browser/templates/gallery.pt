@@ -8,30 +8,31 @@
       xmlns="http://www.w3.org/1999/xhtml">
 
   <body>
-
     <metal:content-core fill-slot="content-core">
-      <metal:content-core define-macro="content-core"
-                          tal:define="toc context/table_of_contents|nothing;">
+      <metal:content-core define-macro="content-core" tal:define="toc context/table_of_contents|nothing;">
 
       <div id="parent-fieldname-text"
-          tal:condition="exists:context/text"
-          tal:content="structure python:context.text.output_relative_to(view.context)"
-          tal:attributes="class python: toc and 'pat-autotoc' or ''" />
+           tal:condition="exists:context/text"
+           tal:content="structure python:context.text.output_relative_to(view.context)"
+           tal:attributes="class python: toc and 'pat-autotoc' or ''"/>
 
-      <section id="gallery" tal:define="images view/images" tal:condition="images">
-          <tal:images tal:repeat="image images">
-          <div class="image-title">
-            <h2 tal:content="image/title">Teaser Title</h2>
+      <div class="row" id="gallery" tal:define="images view/images" tal:condition="images">
+          <div class="col-xs-4 col-sm-3" tal:repeat="image images">
+              <div class="gallery-image">
+                  <div class="image-title">
+                	<h2 tal:content="image/title">Teaser Title</h2>
+                  </div>
+                  <a href="" data-lightbox="" data-title="" tal:attributes="href image/url;
+                                                                            data-lightbox context/id;
+                                                                            data-title image/title">
+                    <img tal:replace="structure image/image"/>
+                  </a>
+              </div>
           </div>
-          <div class="gallery-image">
-            <img tal:replace="structure image/image"/>
-          </div>
-          </tal:images>
-      </section>
+      </div>
 
       </metal:content-core>
     </metal:content-core>
-
   </body>
 
 </html>
