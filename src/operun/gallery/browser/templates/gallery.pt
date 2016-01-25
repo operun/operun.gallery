@@ -7,32 +7,32 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns="http://www.w3.org/1999/xhtml">
 
-  <body>
-    <metal:content-core fill-slot="content-core">
-      <metal:content-core define-macro="content-core" tal:define="toc context/table_of_contents|nothing;">
+<body>
+  <metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core" tal:define="toc context/table_of_contents|nothing;">
 
-      <div id="parent-fieldname-text"
-           tal:condition="exists:context/text"
-           tal:content="structure python:context.text.output_relative_to(view.context)"
-           tal:attributes="class python: toc and 'pat-autotoc' or ''"/>
+      <div id="parent-fieldname-text" tal:condition="exists:context/text"
+                                      tal:content="structure python:context.text.output_relative_to(view.context)"
+                                      tal:attributes="class python: toc and 'pat-autotoc' or ''" />
 
       <div class="row" id="gallery" tal:define="images view/images" tal:condition="images">
-          <div class="col-xs-4 col-sm-3" tal:repeat="image images">
-              <div class="gallery-image">
-                  <div class="image-title">
-                	<h2 tal:content="image/title">Teaser Title</h2>
-                  </div>
-                  <a href="" data-lightbox="" data-title="" tal:attributes="href image/url;
-                                                                            data-lightbox context/id;
-                                                                            data-title image/title">
-                    <img tal:replace="structure image/image"/>
-                  </a>
+        <div class="col-xs-4 col-sm-3 noPadding" tal:repeat="image images">
+          <div class="gallery-image">
+            <a href="" data-lightbox="" data-title="" tal:attributes="href image/url;
+                                                                      data-lightbox context/id;
+                                                                      data-title image/title">
+              <div class="title-container">
+                <div class="image-title" tal:content="image/title"></div>
+                <div class="gradient-overlay"></div>
               </div>
+              <img tal:replace="structure image/image" />
+            </a>
           </div>
+        </div>
       </div>
 
-      </metal:content-core>
     </metal:content-core>
-  </body>
+  </metal:content-core>
+</body>
 
 </html>
