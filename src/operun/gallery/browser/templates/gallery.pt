@@ -15,7 +15,7 @@
                                       tal:attributes="class python: toc and 'pat-autotoc' or ''" />
 
       <div class="row" id="image-gallery" tal:define="images view/images" tal:condition="images">
-        <div class="col-xs-4 col-sm-3 gallery-image-wrapper" tal:repeat="image images">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 gallery-image-wrapper" tal:repeat="image images">
           <div class="gallery-image">
             <a href="" data-lightbox="" data-title="" tal:attributes="href image/url;
                                                                       data-lightbox context/id;

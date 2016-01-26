@@ -4,6 +4,9 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 
+import logging
+
+logger = logging.getLogger(__name__)
 
 class GalleryView(BrowserView):
 
@@ -16,26 +19,27 @@ class GalleryView(BrowserView):
 
         return self.template()
 
-    def crop(self, text, count):
+    def crop(self, text="", count=0):
         """
         Crop given text to given count.
         """
-        cropped_text = ' '.join((text[0:count].strip()).split(' ')[:-1])
-
-        strips = ['.', ',', ':', ';']
-        for s in strips:
-            cropped_text = cropped_text.strip(s)
-
-        if len(text) > count:
-            return cropped_text + u'…'
+        if text:
+            cropped_text = ' '.join((text[0:count].strip()).split(' ')[:-1])
+            strips = ['.', ',', ':', ';']
+            for s in strips:
+                cropped_text = cropped_text.strip(s)
+            if len(text) > count:
+                return cropped_text + u'…'
+            else:
+                return text
         else:
-            return text
+            return ''
 
     def images(self):
         """
         Check if folder contains images and return images
         """
-        brains = api.content.find(portal_type='Image')
+        brains = api.content.find(context=self.context, portal_type='Image', depth=1)
 
         items = []
         for item in brains:
