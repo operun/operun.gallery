@@ -16,14 +16,12 @@ require([
       opacity: 1
     }, 250);
   });
-  $(window).on("load resize", function() {
-    $(".gradient-overlay").css({
-      'height': ($(".gallery-image").height() + 'px')
-    });
-  });
+
   $('.gallery-image').hover(function() {
-      $(this).find('.title-container').fadeIn(100);
+      $(this).find('.gallery-image-title').fadeIn('fast');
     },
     function() {
-      $(".title-container").fadeOut(80);
-    });});
+      $(".gallery-image-title").fadeOut('fast');
+    });
+
+});

@@ -34,10 +34,10 @@
       />
 
   <browser:menuItem
-      for="Products.ATContentTypes.interface.IATFolder"
+      for="plone.app.contenttypes.interfaces.IFolder"
       menu="plone_displayviews"
       title="Gallery"
-      action="@@gallery_view"
+      action="gallery"
       description="Show folder contents as a gallery"
       />
 

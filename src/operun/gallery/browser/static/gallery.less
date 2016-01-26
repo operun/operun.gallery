@@ -3,18 +3,20 @@
 
 /* Gallery variables */
 
-#gallery {
+#image-gallery {
   margin-bottom: 30px;
   padding: 0 15px 0 15px;
 }
 
+.gallery-image-wrapper {
+  padding: 15px;
+}
+
 .gallery-image {
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: auto;
   opacity: 0;
-  border-radius: 2px;
 }
 
 .gallery-image img {
@@ -24,39 +26,18 @@
 
 /* Gradient variables */
 
-.title-container {
+.gallery-image-title {
+  width: 100%;
   position: absolute;
-  z-index: 1;
   bottom: 0;
   display: none;
-  width: 100%;
-  height: auto;
-}
-
-.image-title {
-  font-size: 1.2em;
-  font-weight: 300;
-  margin: 5px;
+  padding: 10px;
   color: #fff;
-}
-
-.gradient-overlay {
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  width: 100%;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, .90) 100%);
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, .90) 100%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, .90) 100%);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Overrides */
 
 .lightbox a:focus, .lightbox a:hover, .lightbox a:active {
   outline: none !important;
-}
-
-.noPadding {
-  margin: 0 !important;
-  padding: 2px !important; /* Change for larger tile gutter */
 }

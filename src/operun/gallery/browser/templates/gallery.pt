@@ -14,16 +14,13 @@
                                       tal:content="structure python:context.text.output_relative_to(view.context)"
                                       tal:attributes="class python: toc and 'pat-autotoc' or ''" />
 
-      <div class="row" id="gallery" tal:define="images view/images" tal:condition="images">
-        <div class="col-xs-4 col-sm-3 noPadding" tal:repeat="image images">
+      <div class="row" id="image-gallery" tal:define="images view/images" tal:condition="images">
+        <div class="col-xs-4 col-sm-3 gallery-image-wrapper" tal:repeat="image images">
           <div class="gallery-image">
             <a href="" data-lightbox="" data-title="" tal:attributes="href image/url;
                                                                       data-lightbox context/id;
                                                                       data-title image/title">
-              <div class="title-container">
-                <div class="image-title" tal:content="image/title"></div>
-                <div class="gradient-overlay"></div>
-              </div>
+              <div class="gallery-image-title" tal:content="image/title"></div>
               <img tal:replace="structure image/image" />
             </a>
           </div>
