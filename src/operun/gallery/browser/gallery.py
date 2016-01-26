@@ -8,6 +8,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class GalleryView(BrowserView):
 
     template = ViewPageTemplateFile('templates/gallery.pt')
@@ -39,7 +40,8 @@ class GalleryView(BrowserView):
         """
         Check if folder contains images and return images
         """
-        brains = api.content.find(context=self.context, portal_type='Image', depth=1)
+        brains = api.content.find(
+            context=self.context, portal_type='Image', depth=1)
 
         items = []
         for item in brains:

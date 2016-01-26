@@ -11,6 +11,7 @@ require([
   'use strict';
 
   // Custom variables
+
   $('.gallery-image').each(function() {
     $(this).delay(Math.floor(Math.random() * 1000)).animate({opacity: 1}, 250);
   });
