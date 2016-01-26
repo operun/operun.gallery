@@ -33,4 +33,12 @@
       permission="zope2.View"
       />
 
+  <browser:menuItem
+      for="plone.app.contenttypes.interfaces.IFolder"
+      menu="plone_displayviews"
+      title="Gallery"
+      action="gallery"
+      description="Show folder contents as a gallery"
+      />
+
 </configure>

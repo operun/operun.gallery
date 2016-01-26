@@ -1,8 +1,22 @@
 /* import lightbox less */
-@import "lightbox.less";
+@import 'lightbox.less';
 
-#gallery {
+/* Gallery variables */
+
+#image-gallery {
   margin-bottom: 30px;
+  padding: 0 15px 0 15px;
+}
+
+.gallery-image-wrapper {
+  padding: 15px;
+}
+
+.gallery-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  opacity: 0;
 }
 
 .gallery-image img {
@@ -10,8 +24,20 @@
   height: 100%;
 }
 
-.lightbox a:focus,
-.lightbox a:hover,
-.lightbox a:active {
+/* Gradient variables */
+
+.gallery-image-title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: none;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Overrides */
+
+.lightbox a:focus, .lightbox a:hover, .lightbox a:active {
   outline: none !important;
 }
