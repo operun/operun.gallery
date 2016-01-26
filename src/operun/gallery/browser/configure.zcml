@@ -33,4 +33,12 @@
       permission="zope2.View"
       />
 
+  <browser:menuItem
+      for="Products.ATContentTypes.interface.IATFolder"
+      menu="plone_displayviews"
+      title="Gallery"
+      action="@@gallery_view"
+      description="Show folder contents as a gallery"
+      />
+
 </configure>
