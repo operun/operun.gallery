@@ -38,13 +38,14 @@ class GalleryView(BrowserView):
         else:
             return ''
 
-
     def images(self):
         """
         Check if folder contains images and return images
         """
-        folders = self.context.getFolderContents({'portal_type': ('Folder', 'Gallery',)}, full_objects=True)
-        images = self.context.getFolderContents({'portal_type': ('Image',)}, full_objects=True)
+        folders = self.context.getFolderContents(
+            {'portal_type': ('Folder', 'Gallery',)}, full_objects=True)
+        images = self.context.getFolderContents(
+            {'portal_type': ('Image',)}, full_objects=True)
 
         items = []
 
@@ -54,7 +55,8 @@ class GalleryView(BrowserView):
                 description = obj.description
                 url = obj.absolute_url()
 
-                subimages = obj.getFolderContents({'portal_type': ('Image',)}, full_objects=True)
+                subimages = obj.getFolderContents(
+                    {'portal_type': ('Image',)}, full_objects=True)
 
                 if subimages:
                     obj = choice(subimages)
