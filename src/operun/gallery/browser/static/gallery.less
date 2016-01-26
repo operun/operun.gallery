@@ -10,9 +10,11 @@
 
 .gallery-image {
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: auto;
   opacity: 0;
+  border-radius: 2px;
 }
 
 .gallery-image img {
@@ -50,9 +52,7 @@
 
 /* Overrides */
 
-.lightbox a:focus,
-.lightbox a:hover,
-.lightbox a:active {
+.lightbox a:focus, .lightbox a:hover, .lightbox a:active {
   outline: none !important;
 }
 

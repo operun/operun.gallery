@@ -1,10 +1,5 @@
 <registry>
 
-  <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/hoverintent">
-    <value key="js">++resource++operun.gallery/hoverintent.js</value>
-    <value key="deps">jquery</value>
-  </records>
-
   <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/lightbox">
     <value key="js">++resource++operun.gallery/lightbox.js</value>
     <value key="deps">jquery</value>
