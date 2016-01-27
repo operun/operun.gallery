@@ -209,9 +209,8 @@ body.lb-disable-scrolling {
   background-color: rgba(0, 0, 0, 0.5);
 }
 /* Overrides */
-.gallery-image a:focus,
-.gallery-image a:hover,
-.gallery-image a:active {
-  outline: 0 !important;
+.gallery-image a,
+.lightbox a {
+  outline: none !important;
 }
 /*# sourceMappingURL=gallery-compiled.css.map */
