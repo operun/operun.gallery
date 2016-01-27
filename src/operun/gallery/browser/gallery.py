@@ -42,10 +42,15 @@ class GalleryView(BrowserView):
         """
         Check if folder contains images and return images
         """
+<<<<<<< HEAD
         folders = self.context.getFolderContents(
             {'portal_type': ('Folder', 'Gallery',)}, full_objects=True)
         images = self.context.getFolderContents(
             {'portal_type': ('Image',)}, full_objects=True)
+=======
+        brains = api.content.find(
+            context=self.context, portal_type='Image', depth=1)
+>>>>>>> 752877b1d801612ea7283ee17507ce4fd1d2db1d
 
         items = []
 
