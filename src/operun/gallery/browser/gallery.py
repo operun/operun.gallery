@@ -5,7 +5,6 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 
 from random import choice
-from re import compile
 
 
 class GalleryView(BrowserView):
