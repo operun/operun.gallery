@@ -5,6 +5,11 @@
     <value key="deps">jquery</value>
   </records>
 
+  <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/lazyload">
+    <value key="js">++resource++operun.gallery/lazyload.js</value>
+    <value key="deps">jquery</value>
+  </records>
+
   <records interface='Products.CMFPlone.interfaces.IResourceRegistry' prefix="plone.resources/gallery">
     <value key="js">++resource++operun.gallery/gallery.js</value>
     <value key="deps">jquery</value>

@@ -5,10 +5,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 
 from random import choice
-
-import logging
-
-logger = logging.getLogger(__name__)
+from re import compile
 
 
 class GalleryView(BrowserView):
@@ -93,5 +90,8 @@ class GalleryView(BrowserView):
                         }
 
                 items.append(data)
+
+        import ipdb
+        ipdb.set_trace()
 
         return items
