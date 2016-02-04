@@ -90,7 +90,4 @@ class GalleryView(BrowserView):
 
                 items.append(data)
 
-        import ipdb
-        ipdb.set_trace()
-
         return items
