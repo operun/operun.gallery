@@ -6,6 +6,7 @@ if (window.jQuery) {
 
 require([
   'jquery',
+  'lightbox',
 ], function($) {
   'use strict';
 
