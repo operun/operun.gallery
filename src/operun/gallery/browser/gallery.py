@@ -18,6 +18,11 @@ class GalleryView(BrowserView):
 
         return self.template()
 
+    def enable_lazy_load(self):
+        """Check if we want to enable lazy load script
+        """
+        return True
+
     def crop(self, text="", count=0):
         """
         Crop given text to given count.
@@ -56,14 +61,16 @@ class GalleryView(BrowserView):
 
                     if obj.image:
                         images_view = api.content.get_view('images', obj, self.request)  # noqa
-                        tag = images_view.tag('image', height=450, width=450, direction='down')  # noqa
+                        scale = images_view.scale('image', height=450, width=450, direction='down')  # noqa
+                        tag = scale.tag()
                     else:
                         tag = None
 
                     data = {'title': self.crop(title, 65),
                             'description': self.crop(description, 265),
                             'type': 'folder',
-                            'image': tag,
+                            'image_tag': tag,
+                            'image_url': scale.absolute_url(),
                             'url': url,
                             }
 
@@ -77,14 +84,16 @@ class GalleryView(BrowserView):
 
                 if obj.image:
                     images_view = api.content.get_view('images', obj, self.request)  # noqa
-                    tag = images_view.tag('image', height=450, width=450, direction='down')  # noqa
+                    scale = images_view.scale('image', height=450, width=450, direction='down')  # noqa
+                    tag = scale.tag()
                 else:
                     tag = None
 
                 data = {'title': self.crop(title, 65),
                         'description': self.crop(description, 265),
                         'type': 'image',
-                        'image': tag,
+                        'image_tag': tag,
+                        'image_url': scale.absolute_url(),
                         'url': url,
                         }
 

@@ -15,19 +15,22 @@
                                       tal:attributes="class python: toc and 'pat-autotoc' or ''" />
       -->
 
-      <div class="row" id="image-gallery" tal:define="images view/images" tal:condition="images">
+      <div class="row" id="image-gallery" tal:define="images view/images; enable_lazy_load view/enable_lazy_load" tal:condition="images">
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 gallery-image-wrapper" tal:repeat="image images">
           <div class="gallery-image" tal:define="type image/type">
 
             <a href="" data-lightbox="" data-title="" tal:attributes="href image/url; data-lightbox context/id; data-title image/title"
                                                       tal:condition="python: type == 'image'">
               <div class="gallery-image-title" tal:content="image/title"></div>
-              <img tal:replace="structure image/image" />
+
+              <img src="" alt="" tal:attributes="src image/image_url; alt image/title" tal:condition="not:enable_lazy_load" />
+              <img src="" class="lazy" alt="" tal:attributes="data-original image/image_url; alt image/title" tal:condition="enable_lazy_load" />
+
             </a>
 
             <a href="" tal:attributes="href image/url" tal:condition="python: type == 'folder'">
               <div class="gallery-image-title" tal:content="image/title"></div>
-              <img tal:replace="structure image/image" />
+              <img tal:replace="structure image/image_tag" />
             </a>
 
           </div>
